@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.devsuperior.userdept.dto.UserDTO;
 import com.devsuperior.userdept.entities.User;
-import com.devsuperior.userdept.repositories.UserRepository;
+import com.devsuperior.userdept.services.UserService;
 
 @RestController
 @RequestMapping(value = "/users")
@@ -19,23 +20,21 @@ import com.devsuperior.userdept.repositories.UserRepository;
 public class UserController {
 
 	@Autowired
-	private UserRepository repository;
+	private UserService service;
 	
 	@GetMapping
 	public List<User> findAll(){
-		List<User> result = repository.findAll();
+		List<User> result = service.findAll();
 		return result;
 	}
 	
 	@GetMapping(value = "/{id}")
-	public User findById(@PathVariable Long id){
-		User result = repository.findById(id).get();
-		return result;
+	public UserDTO findById(@PathVariable Long id){
+		return service.findById(id);
 	}
 	
 	@PostMapping
-	public User isert(@RequestBody User user){
-		User result = repository.save(user);
-		return result;
+	public void isert(@RequestBody User user){
+		service.save(user);
 	}
 }
