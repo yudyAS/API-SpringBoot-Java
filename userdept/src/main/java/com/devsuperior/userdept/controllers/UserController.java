@@ -3,6 +3,8 @@ package com.devsuperior.userdept.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,7 +36,11 @@ public class UserController {
 	}
 	
 	@PostMapping
-	public void isert(@RequestBody User user){
-		service.save(user);
+	public ResponseEntity<?> isert(@RequestBody User user){
+		try {
+			return ResponseEntity.ok(service.save(user));
+		}catch(Exception erro){
+			return ResponseEntity.status(HttpStatusCode.valueOf(400)).body(erro.getMessage());
+		}
 	}
 }
