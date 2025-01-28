@@ -75,7 +75,7 @@ http://localhost:8080
   "email": "usuario@exemplo.com",
   "department": {
       "id": numero do departamento
-}
+   }
 }
 ```
 
