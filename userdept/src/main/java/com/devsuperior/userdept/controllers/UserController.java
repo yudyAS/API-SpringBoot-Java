@@ -18,11 +18,12 @@ import com.devsuperior.userdept.services.UserService;
 
 @RestController
 @RequestMapping(value = "/users")
-
 public class UserController {
 
-	@Autowired
-	private UserService service;
+	private final UserService service;
+	public UserController(UserService userService) {
+		this.service = userService;
+	}
 	
 	@GetMapping
 	public List<User> findAll(){
@@ -36,7 +37,7 @@ public class UserController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<?> isert(@RequestBody User user){
+	public ResponseEntity<?> insert(@RequestBody User user){
 		try {
 			return ResponseEntity.ok(service.save(user));
 		}catch(Exception erro){

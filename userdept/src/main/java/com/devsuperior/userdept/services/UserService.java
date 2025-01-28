@@ -13,21 +13,23 @@ import com.devsuperior.userdept.repositories.UserRepository;
 @Service
 public class UserService {
 	
-	@Autowired
-	private UserRepository repository;
+	private final UserRepository repository;
+	public UserService(UserRepository userRepository) {
+		this.repository = userRepository;
+	}
 	
 	@Transactional(readOnly = true)
 	public UserDTO findById(Long id) {
-		User entity = repository.findById(id).get();
-		UserDTO dto = new UserDTO(entity);
-		return dto;
+		return new UserDTO(repository.findById(id).get());
 	}
+	
 	public List<User> findAll() {
 		return repository.findAll();
 	}
-	public User save(User user) throws IllegalAccessException {
+	
+	public User save(User user) throws IllegalArgumentException {
 		if(user.getName().length() > 10) {
-			throw new IllegalAccessException("O nome esta maior que o permitido");
+			throw new IllegalArgumentException("O nome esta maior que o permitido");
 		}
 		repository.save(user);
 		return user;
