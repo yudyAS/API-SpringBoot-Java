@@ -16,7 +16,9 @@ Este é um projeto de uma API REST simples para gerenciamento de usuários e dep
 3. *Buscar um usuário pelo ID*  
    Endpoint para retornar os detalhes de um usuário específico com base no seu identificador único.
 
-4. *Inserir um novo usuário*  
+   ![Image](https://github.com/user-attachments/assets/e67aab4a-cef6-4fd8-9017-3fe77fa194e9)
+
+5. *Inserir um novo usuário*  
    Endpoint para adicionar novos usuários ao sistema.
 
 ---
