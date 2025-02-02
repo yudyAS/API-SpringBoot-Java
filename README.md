@@ -21,6 +21,8 @@ Este é um projeto de uma API REST simples para gerenciamento de usuários e dep
 5. *Inserir um novo usuário*  
    Endpoint para adicionar novos usuários ao sistema.
 
+   ![Image](https://github.com/user-attachments/assets/14b3e279-3dd3-4d64-b5f3-57b4e7c07600)
+
 ---
 
 ## *Tecnologias Utilizadas*
