@@ -11,10 +11,12 @@ Este é um projeto de uma API REST simples para gerenciamento de usuários e dep
 1. *Buscar todos os usuários*  
    Endpoint para listar todos os usuários cadastrados no sistema.
 
-2. *Buscar um usuário pelo ID*  
+   ![Image](https://github.com/user-attachments/assets/89fd5936-7b84-482b-9db8-285b645d6b59)
+
+3. *Buscar um usuário pelo ID*  
    Endpoint para retornar os detalhes de um usuário específico com base no seu identificador único.
 
-3. *Inserir um novo usuário*  
+4. *Inserir um novo usuário*  
    Endpoint para adicionar novos usuários ao sistema.
 
 ---
